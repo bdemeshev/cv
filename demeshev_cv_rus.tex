@@ -1,0 +1,152 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{geometry}% http://ctan.org/pkg/geometry
+\geometry{left=1cm, right=1cm}
+
+\moderncvtheme[blue]{casual}  
+
+\firstname{Борис}   
+\familyname{Демешев} 
+% \title{Title}              % Your title (optional)
+%\address{Новопесчаная ул. 19, кв. 155}{125252, Москва, Россия} % Your current address
+\mobile{+7 903 287 34 22}
+%\phone {number}    % Your phone number
+\email{boris.demeshev@gmail.com}          % Your email address
+
+%\quote{\tiny  We have not succeeded in answering all our problems. The answers we have found only serve us to raise a whole set of new questions. In some ways we are as confused as ever. But we believe we are confused at a higher level and about more important things}
+
+\homepage{github.com/bdemeshev/}    % Your website
+%\extrainfo {information} % Possible extra information e.g. website
+
+
+\usepackage[%
+ backend=biber,% or bibtex8
+ style=authoryear,%
+ dashed=false, % заменять ли одинаковых авторов на тире
+ sorting=ydnt,% sorted by year, descending
+]{biblatex}
+
+
+\renewbibmacro*{date}{}
+\renewbibmacro*{date+extrayear}{}
+\renewbibmacro*{issue+date}{}
+\newcommand*{\bibyear}{}
+
+\defbibenvironment{bibliography}
+  {\list
+     {\iffieldequals{year}{\bibyear}
+        {}
+        {\printfield{year}%
+         \savefield{year}{\bibyear}}}
+     {\setlength{\topsep}{0pt}% layout parameters based on moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+
+
+\usepackage{filecontents}
+
+\begin{filecontents}{demeshev.bib}
+@article{demeshev:b_dyn,
+  author = {Демешев Борис, Тихонова Анна},
+  journal = {Корпоративные финансы},
+  year = {2014},
+  title = {Динамика прогнозной силы моделей банкротства для средних и малых российских компаний оптовой и розничной торговли},
+}
+@article{demeshev:b_comp,
+  author = {Демешев Борис, Тихонова Анна},
+  journal = {Экономический журнал Высшей школы экономики},
+  year = {2014},
+  title = {Прогнозирование банкротства российских компаний: межотраслевое сравнение},
+}
+@book{borzykh:pset,
+  author = {Демешев Борис, Борзых Дмитрий},
+  year = {2014},
+  publisher = {УРСС},
+  title = {Эконометрика в задачах и упражнениях},
+}
+
+@Unpublished{demeshev:bvar_forecasting,
+  author = {Demeshev Boris, Malakhovskaya Oxana},
+  note = {Preprint in Working papers by National research university Higher School of economics},
+  title = {Forecasting Russian macroeconomic indicators with BVAR},
+  year = {2015},
+  number = {105}
+}
+
+@Unpublished{demeshev:bvar_comparison,
+  author = {Демешев Борис, Малаховская Оксана},
+  note = {Препринты. Высшая школа экономики. Серия WP12 «Научные доклады лаборатории макроэкономического анализа»},
+  title = {Сравнение случайного блуждания, VAR, BVAR Литтермана при прогнозировании выпуска, индекса цен и процентной ставки},
+  year = {2015},
+  number = {3}
+}
+
+
+\end{filecontents}
+
+\addbibresource{demeshev.bib}
+
+
+
+
+
+\begin{document}
+
+\makecvtitle
+
+\section{Опыт работы}
+\cvline{09.2001 --- \ldots}{\small старший преподаватель, НИУ-ВШЭ, эконометрика, теория игр, теория вероятностей и математической статистики, анализ временных рядов, стохастический анализ}
+\cvline{09.2003 --- \ldots}{\small преподаватель, Международный институт экономики и финансов, линейная алгебра, математика для экономистов, стохастический анализ}
+\cvline{02.2015 --- \ldots}{\small преподаватель, РАНХ, случайные процессы}
+\cvline{01.2016 --- \ldots}{\small преподаватель, «Эконометрика» на платформе \url{https://openedu.ru/}}
+
+\cvline{06.2015}{\small семинары по R и эконометрике для IMS Health}
+\cvline{03.2015 --- 06.2015}{\small преподаватель, «Эконометрика» на платформе \url{www.coursera.org}}
+\cvline{09.2009 --- 08.2011}{\small преподаватель, Католический университет Луван-ля-Нёв, теория вероятностей и математическая статистика, анализ качественных данных, лог-линейные модели}
+\cvline{11.2008}{\small анализ макроэкономических факторов влияющих на продажи электроники в России для Самсунг-Россия}
+\cvline{06.2007}{\small семинары по математической статистике для ОАО МТС-Россия}
+\cvline{11.2006}{\small семинары по анализу временных рядов для ЦБ РФ}
+\cvline{05.2006}{\small семинары по математической статистике для ЗАО Транстелеком}
+
+
+\section{Образование}
+\cvline{09.2014}{повышение квалификации, Эконометрика в R}
+\cvline{06.2014}{повышение квалификации, Пространственная эконометрика}
+\cvline{2009 --- 2011}{Курсы по статистике Католического университета Луван-ля-Нёв}
+\cvline{2004}{Летняя школа Лондонской Школы Экономики, Опционы, фьючерсы и прочие финансовые инструменты,  А+}
+\cvline{2004}{магистр экономики Роттердамской Школы Экономики}
+\cvline{2003}{ Летняя школа Лондонской Школы Экономики, Продвинутая эконометрика, А-}
+\cvline{2001 --- 2003}{магистр экономики, НИУ-ВШЭ, математические методы анализа экономики}
+\cvline{1997 --- 2001}{бакалавр экономики, НИУ-ВШЭ, диплом с отличием}
+\cvline{2000 --- 2001}{стажировка, Сорбонна (Париж-1)}
+%\cvline{2001 --- 2004}{вольнослушатель Независимого Московского Университета}
+\cvline{1986 --- 1997}{школа \textnumero 1251 с углубленным изучением французского языка,  серебряная медаль}
+
+\newpage
+
+\section{Навыки}
+
+\cvline{Языки:}{\small английский (свободно), французский (свободно), немецкий (начальный), русский (родной) }
+\cvline{Компьютер:}{\small R, python, \LaTeX, markdown, git, gretl, eviews, stata, office}
+
+
+
+\section{Разное}
+\cvline{Хобби}{\small Любительский интерес к генетике, астрономии и квантовой физике}
+\cvline{Девиз}{\small  Нам не удалось решить все наши задачи. Ответы, что мы находим, лишь 
+ставят перед нами новые вопросы. В каком-то смысле мы также ничего не знаем как и раньше. 
+Но мы верим, что наше незнание стало глубже, а не знаем мы всё более и более важные вещи.}
+
+\nocite{*}
+\printbibliography[title={Публикации}]
+
+\end{document}
