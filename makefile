@@ -6,7 +6,7 @@ file_name_2 = demeshev_cv_rus
 
 all: $(file_name).pdf $(file_name_2).pdf
 
-$(file_name).pdf: $(file_name).tex
+$(file_name).pdf: $(file_name).tex demeshev_eng.bib
 	# protection against biber error
 	# http://tex.stackexchange.com/questions/140814/
 	rm -rf `biber --cache`
@@ -24,7 +24,7 @@ $(file_name).pdf: $(file_name).tex
 # $(file_name).tex : $(file_name).Rnw
 # 	Rscript -e "library(knitr); knit('$(file_name).Rnw')"
 
-$(file_name_2).pdf: $(file_name_2).tex
+$(file_name_2).pdf: $(file_name_2).tex demeshev_rus.bib
 	# protection against biber error
 	# http://tex.stackexchange.com/questions/140814/
 	rm -rf `biber --cache`
