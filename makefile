@@ -13,13 +13,13 @@ $(file_name).pdf: $(file_name).tex demeshev_eng.bib
 
 	# create pdf
 	# will automatically run pdflatex/biber if necessary
-	latexmk -pdf $(file_name).tex
+	latexmk -xelatex $(file_name).tex
 
 	# clean auxillary files
 	latexmk -c $(file_name).tex
 
-	-rm $(file_name).bbl
-	-rm $(file_name).run.xml
+	-rm *.aux *.bcf *.fdb_latexmk *.xdv *.out *.fls *.blg *.synctex.gz *.bbl *.run.xml *.out *.log
+
 
 # $(file_name).tex : $(file_name).Rnw
 # 	Rscript -e "library(knitr); knit('$(file_name).Rnw')"
@@ -31,13 +31,12 @@ $(file_name_2).pdf: $(file_name_2).tex demeshev_rus.bib
 
 	# create pdf
 	# will automatically run pdflatex/biber if necessary
-	latexmk -pdf $(file_name_2).tex
+	latexmk -xelatex $(file_name_2).tex
 
 	# clean auxillary files
 	latexmk -c $(file_name_2).tex
 
-	-rm $(file_name_2).bbl
-	-rm $(file_name_2).run.xml
+	-rm *.aux *.bcf *.fdb_latexmk *.xdv *.out *.fls *.blg *.synctex.gz *.bbl *.run.xml *.out *.log
 
 # $(file_name_2).tex : $(file_name_2).Rnw
 # 	Rscript -e "library(knitr); knit('$(file_name_2).Rnw')"
@@ -46,4 +45,4 @@ $(file_name_2).pdf: $(file_name_2).tex demeshev_rus.bib
 clean:
 	-rm $(file_name).pdf
 	-rm $(file_name_2).pdf
-	# rm $(file_name).tex
+	-rm *.aux *.bcf *.fdb_latexmk *.xdv *.out *.fls *.blg *.synctex.gz *.bbl *.run.xml *.out *.log

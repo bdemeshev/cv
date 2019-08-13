@@ -1,7 +1,18 @@
 \documentclass[11pt,a4paper]{moderncv}
+% sudo apt-get install fonts-font-awesome
 
-\usepackage[utf8]{inputenc}
-\usepackage[british]{babel}
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\setmainlanguage{english}
+\setotherlanguages{russian}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
 \usepackage{textcomp}
 
 \usepackage{geometry}% http://ctan.org/pkg/geometry
@@ -68,6 +79,9 @@
 \cvline{09.2001 — \ldots}{\small senior lecturer, Higher School of Economics (HSE), econometrics, game theory, probability theory and statistics, time series analysis, stochastic calculus}
 \cvline{09.2003 — \ldots}{\small senior lecturer, International College of Economics and Finance, linear algebra (ICEF), maths for economists, stochastic calculus}
 \cvline{02.2015 — \ldots}{\small lecturer, Russian Presidential Academy of National Economy and Public Administration (RANEPA), stochastic processes}
+
+\cvline{09.2019}{\small statistics course for Central Bank of Russia}
+\cvline{09.2018}{\small machine learning course for Internet solutions}
 \cvline{01.2016 — 05.2016}{\small lecturer, MOOC «Econometrics» on \url{https://openedu.ru/}}
 \cvline{06.2015}{\small course on R and econometrics for IMS Health}
 \cvline{03.2015 — 06.2015}{\small lecturer, MOOC «Econometrics» on \url{www.coursera.org}}

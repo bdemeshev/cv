@@ -1,7 +1,19 @@
 \documentclass[11pt,a4paper]{moderncv}
+% sudo apt-get install fonts-font-awesome
 
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+\usepackage{fontspec} % что-то про шрифты?
+\usepackage{polyglossia} % русификация xelatex
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+% download "Linux Libertine" fonts:
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% why do we need \newfontfamily:
+% http://tex.stackexchange.com/questions/91507/
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+
 
 \usepackage{geometry}% http://ctan.org/pkg/geometry
 \geometry{left=1cm, right=1cm}
@@ -66,8 +78,10 @@
 \cvline{09.2001 — \ldots}{\small старший преподаватель, НИУ-ВШЭ, эконометрика, теория игр, теория вероятностей и математической статистики, анализ временных рядов, стохастический анализ}
 \cvline{09.2003 — \ldots}{\small преподаватель, Международный институт экономики и финансов, линейная алгебра, математика для экономистов, стохастический анализ}
 \cvline{02.2015 — \ldots}{\small преподаватель, РАНХ, случайные процессы}
-\cvline{01.2016 — 05.2016}{\small преподаватель, «Эконометрика» на платформе \url{https://openedu.ru/}}
 
+\cvline{09.2019}{\small семинары по математической статистике для ЦБ РФ}
+\cvline{09.2018}{\small семинары по машинному обучению для ООО «Интернет решения»}
+\cvline{01.2016 — 05.2016}{\small преподаватель, «Эконометрика» на платформе \url{https://openedu.ru/}}
 \cvline{06.2015}{\small семинары по R и эконометрике для IMS Health}
 \cvline{03.2015 — 06.2015}{\small преподаватель, «Эконометрика» на платформе \url{www.coursera.org}}
 \cvline{09.2009 — 08.2011}{\small преподаватель, Католический университет Луван-ля-Нёв, теория вероятностей и математическая статистика, анализ качественных данных, лог-линейные модели}
@@ -94,7 +108,7 @@
 
 \section{Навыки}
 
-\cvline{Языки:}{\small английский (свободно), французский (свободно), немецкий (начальный), русский (родной) }
+\cvline{Языки:}{\small английский (свободно), французский (свободно), русский (родной) }
 \cvline{Компьютер:}{\small R, python, \LaTeX, markdown, git, gretl, eviews, stata, office}
 
 
